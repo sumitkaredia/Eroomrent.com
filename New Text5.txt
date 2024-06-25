@@ -1,0 +1,84 @@
+		public static WebDriver driver;
+
+public static void main(String[] args) {
+
+driver=new ChromeDriver();
+
+driver.manage().window().maximize();
+
+driver.get("https://tutorialsninja.com/demo/index.php?route=common/home");
+
+KeyWordTesting.MyAccount();
+
+KeyWordTesting.Loginbtn();
+
+KeyWordTesting.inputemail("shivamgupta1307@gmail.com");
+
+KeyWordTesting.inputpassword("shivam@987");
+
+KeyWordTesting.Loginpage();
+
+}
+
+/*public static WebDriver driver;
+
+
+KeyWordTesting(WebDriver d)
+
+{
+
+driver=d;
+
+}
+
+*/
+
+public static void MyAccount()
+
+{
+
+WebElement ele= driver.findElement(By.partialLinkText("My Account"));
+
+ele.click();
+
+}
+
+public static void Loginbtn()
+
+{
+
+WebElement ele1=driver.findElement(By.partialLinkText("Login"));
+
+ele1.click();
+
+}
+
+public static void inputemail(String email)
+
+{
+
+WebElement ele2=driver.findElement(By.id("input-email"));
+
+ele2.sendKeys(email);
+
+}
+
+public static void inputpassword(String pass)
+
+{
+
+WebElement ele3=driver.findElement(By.id("input-password"));
+
+ele3.sendKeys(pass);
+
+}
+
+public static void Loginpage()
+
+{
+
+WebElement ele4=driver.findElement(By.cssSelector("input[value=\"Login\"]"));
+
+ele4.click();
+
+}
